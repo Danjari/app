@@ -7,3 +7,4 @@ htbuilder
 numpy
 seaborn
 Pillow
+plotly
