@@ -1,4 +1,4 @@
-%%writefile app.py
+#%%writefile app.py
 # Streamlit is an open-source app framework for Machine Learning and Data Science projects.
 import streamlit as st
 
