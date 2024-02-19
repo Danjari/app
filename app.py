@@ -1,3 +1,4 @@
+%%writefile app.py
 # Streamlit is an open-source app framework for Machine Learning and Data Science projects.
 import streamlit as st
 
@@ -55,19 +56,6 @@ st.dataframe(df.describe())
       #  code = '''df.describe()'''
        # st.code(code, language='python')
 
-if st.button("Generate Report"):
-  import streamlit as st
-  import streamlit.components.v1 as components
-
-  # Title for your app
-  st.title('Sweetviz Report in Streamlit')
-
-  # Display the Sweetviz report
-  report_path = 'report.html'
-  HtmlFile = open(report_path, 'r', encoding='utf-8')
-  source_code = HtmlFile.read()
-  components.html(source_code, height=1000,width=1000)
-
 
 list_variables = df.columns
 
@@ -92,4 +80,20 @@ tab1.line_chart(data=filtered_df, x=symbols[0], y=symbols[1], width=0, height=0,
 tab2.subheader("Bar Chart")
 # Display a bar chart for the selected variables
 tab2.bar_chart(data=filtered_df, x=symbols[0], y=symbols[1], use_container_width=True)
+
+
+if st.button("Generate Report"):
+  import streamlit as st
+  import streamlit.components.v1 as components
+
+  # Title for your app
+  st.title('Sweetviz Report in Streamlit')
+
+  # Display the Sweetviz report
+  report_path = 'report.html'
+  HtmlFile = open(report_path, 'r', encoding='utf-8')
+  source_code = HtmlFile.read()
+  components.html(source_code, height=1000,width=1000)
+
+
 
